@@ -1,26 +1,14 @@
-<p align="center">
-    <img src="https://image.ibb.co/eGKPgw/if_019_Star_2792947.png" width=32> &nbsp; &nbsp; &nbsp; &nbsp;
-    <img src="https://image.ibb.co/nKBn1w/if_like_thumbs_up_hand_social_media_1169159.png" width=32>
-    <img src="https://image.ibb.co/jq0rTb/if_thumbs_down_hand_social_media_dislike_1169174.png" width=32>
-    &nbsp; &nbsp; &nbsp; &nbsp;
-    <img src="https://image.ibb.co/hgco8b/if_chevron_up_173180.png" width=32>
-    <img src="https://image.ibb.co/bANzEG/if_chevron_down_173177.png" width=32>
-</p>
+# Note
+This is a fork of https://github.com/mohamednagy/Laravel-rating. Since the original code does not work with Laravel 6, I decided to fork and update for testing purposes with newest Laravel update.
 
-# Laravel-Ratings
+# Laravel-Ratings 
 Laravel package that allows you to **rate,  like & dislike or vote up & down** your models with a simple and clear way. <br>
 *If you see this packge can help, Don't skimp on me with a star :)*
-
-* [Install](https://github.com/mohamednagy/Laravel-rating#install)
-* <img src="https://image.ibb.co/eGKPgw/if_019_Star_2792947.png" width=12> [Rating](https://github.com/mohamednagy/Laravel-rating#rating)
-* <img src="https://image.ibb.co/nKBn1w/if_like_thumbs_up_hand_social_media_1169159.png" width=12> [Like & Dislike](https://github.com/mohamednagy/Laravel-rating#like--dislike)
-* <img src="https://image.ibb.co/hgco8b/if_chevron_up_173180.png" width=12> [Voting](https://github.com/mohamednagy/Laravel-rating#voting)
-
 
 ## Rating
 include `CanRate` trait into your user model to apply rating functionalties
 ```
-use Nagy\LaravelRating\Traits\Rate\CanRate;
+use Qlick\LaravelRating\Traits\Rate\CanRate;
 
 class User extends Model
 {
@@ -28,7 +16,7 @@ class User extends Model
 ```
 include `Rateable` trait to your model that will be rateable
 ```
-use Nagy\LaravelRating\Traits\Rate\Rateable;
+use Qlick\LaravelRating\Traits\Rate\Rateable;
 
 class Post extends Model
 {
@@ -56,7 +44,7 @@ $user->rated(); // returns a collection of rated models
 ## Voting
 include `CanVote` trait into your user model to apply rating functionalties
 ```
-use Nagy\LaravelRating\Traits\Vote\CanVote;
+use Qlick\LaravelRating\Traits\Vote\CanVote;
 
 class User extends Model
 {
@@ -64,7 +52,7 @@ class User extends Model
 ```
 include `Votable` trait to your model that will be votable
 ```
-use Nagy\LaravelRating\Traits\Vote\Votable;
+use Qlick\LaravelRating\Traits\Vote\Votable;
 
 class Post extends Model
 {
@@ -109,7 +97,7 @@ $user->voted(); // returns a collection of total voted models;
 ## Like & Dislike
 include `CanLike` trait into your user model to apply like and dislike functionalties
 ```
-use Nagy\LaravelRating\Traits\Like\CanLike;
+use Qlick\LaravelRating\Traits\Like\CanLike;
 
 class User extends Model
 {
@@ -117,7 +105,7 @@ class User extends Model
 ```
 include `Likeabke` trait to your model that will be likeabke
 ```
-use Nagy\LaravelRating\Traits\Like\Likeable;
+use Qlick\LaravelRating\Traits\Like\Likeable;
 
 class Post extends Model
 {
@@ -159,19 +147,19 @@ $user->likedDisliked(); // return a collection of liked and disliked models;
 # Install
 
 ```
-$ composer require nagy/laravel-rating
+$ composer require qlick/laravel-rating
 ```
 
 in your config/app.php
 ```
     'providers' => [
         ...
-        Nagy\LaravelRating\LaravelRatingServiceProvider::class
+        Qlick\LaravelRating\LaravelRatingServiceProvider::class
     ],
 
     'aliases' => [
         ...
-        "LaravelRating" => \Nagy\LaravelRating\LaravelRatingFacade::class,
+        "LaravelRating" => \Qlick\LaravelRating\LaravelRatingFacade::class,
     ]
 ```
 > You don't need this step in laravel5.5 `package:discover`  will do the job :)
