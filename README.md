@@ -173,4 +173,3 @@ run the migrations
 ```
 $ php artisan migrate
 ```
-
